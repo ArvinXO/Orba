@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ORBA | Neural Arcade & Educational Terminal
 
-## Getting Started
+![ORBA Header](https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&q=80&w=1200)
 
-First, run the development server:
+## Overview
+**ORBA** is a high-performance, next-generation neural arcade and educational terminal. It combines immersive synchronization games like **Perspective Prism** with tactical training modules such as **Metropolitan Academy (Police Powers UK)**. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Designed with a "State-of-the-Art" service-terminal aesthetic, ORBA utilizes glassmorphism, cinematic micro-interactions, and real-time physics to deliver a premium user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Core Features
+- **Perspective Prism**: A neural synchronization gauntlet featuring 25 phases of high-speed alignment. Includes "Chronos Field" time-dilation mechanics and persistent difficulty staging.
+- **Metropolitan Academy**: An S-Tier educational sim for UK Police Powers (PACE Act 1984). Features dynamic scenarios, NDM/THRIVE assessments, and professional feedback loops.
+- **Neural Identity System**: Client-side persistent profiles using localized data arrays.
+- **Responsive Architecture**: Fully optimized for desktop and mobile neural interfaces.
+- **S-Tier Aesthetics**: Sillitoe Tartan accents, CRT scanline overlays, and layered volumetric glows.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
+- **Framework**: Next.js 15 (React 19)
+- **Styling**: Tailwind CSS v4 (Alpha/Inline Theme Engine)
+- **Animation**: Framer Motion (Spring Physics & AnimatePresence)
+- **Iconography**: Lucide React
+- **Graphics**: Three.js (@react-three/fiber)
+- **Logic**: TypeScript 5+
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment & Development
+1. **Initialize Terminal**: `npm install`
+2. **Synchronize Environment**: `npm run dev`
+3. **Neural Optimization**: `npm run build`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2026 ORBA Neural Network // Terminal 7 Deployment
