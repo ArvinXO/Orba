@@ -80,7 +80,7 @@ export default function PerspectivePrismFull({ username, onExit }: PerspectivePr
     const [score, setScore] = useState(0);
     const [lives, setLives] = useState(3);
     const [rings, setRings] = useState<Ring[]>([]);
-    const [gameMode, setGameMode] = useState<'normal' | 'hard'>('normal');
+    const [gameMode, setGameMode] = useState<'normal' | 'hard' | 'practice'>('normal');
     const [gameStatus, setGameStatus] = useState<'menu' | 'playing' | 'level_transition' | 'complete' | 'game_over'>('menu');
     const [bonusText, setBonusText] = useState<string | null>(null);
     const [combo, setCombo] = useState(0);
@@ -161,7 +161,7 @@ export default function PerspectivePrismFull({ username, onExit }: PerspectivePr
         setGameStatus('menu'); // Return to menu for mode selection
     }, []);
 
-    const startGame = (mode: 'normal' | 'hard') => {
+    const startGame = (mode: 'normal' | 'hard' | 'practice') => {
         setGameMode(mode);
         setScore(0);
         setLevel(1);
@@ -332,6 +332,11 @@ export default function PerspectivePrismFull({ username, onExit }: PerspectivePr
             setCombo(0);
             triggerShake();
             setLives(prev => {
+                if (gameMode === 'practice') {
+                    setBonusText("DESYNC NEUTRALIZED (PRACTICE)");
+                    setTimeout(() => setBonusText(null), 1000);
+                    return prev; // In practice mode, lives are not lost
+                }
                 if (prev > 1) {
                     setBonusText("DESYNC DETECTED");
                     setTimeout(() => setBonusText(null), 1000);
@@ -649,6 +654,19 @@ export default function PerspectivePrismFull({ username, onExit }: PerspectivePr
                                 </div>
                                 <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tight">Hard Mode</h3>
                                 <p className="text-xs text-white/40 leading-relaxed">No neural restoration between phases. All damage is permanent. Chronos Field triggers once per life.</p>
+                            </button>
+
+                            <button
+                                onClick={() => startGame('practice')}
+                                className="group relative p-8 bg-white/5 border border-white/10 rounded-3xl text-left hover:bg-white/10 transition-all overflow-hidden md:col-span-2"
+                            >
+                                <div className="absolute top-0 left-0 w-1 h-full bg-blue-500 opacity-40" />
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-[8px] font-black uppercase tracking-widest">Neural Practice</div>
+                                    <Activity className="text-white/20 group-hover:text-blue-400 transition-colors" />
+                                </div>
+                                <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tight">Practice Mode</h3>
+                                <p className="text-xs text-white/40 leading-relaxed">Infinite neural integrity. Mastery without risk. Perfect for calibrating your timing across all 25 phases.</p>
                             </button>
                         </div>
 
